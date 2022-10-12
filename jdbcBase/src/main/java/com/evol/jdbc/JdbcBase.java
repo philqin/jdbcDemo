@@ -29,6 +29,7 @@ public class JdbcBase {
     }
 
     public Connection testData(String url, String name, String passwd) throws ClassNotFoundException, SQLException {
+        System.out.println(url);
         Connection connection = null;
         //TODO 1导入jar
         //TODO 2注册驱动  任何class都要装载在虚拟机上才能运行。这句话就是装载类用的(和new 不一样，要分清楚)。
