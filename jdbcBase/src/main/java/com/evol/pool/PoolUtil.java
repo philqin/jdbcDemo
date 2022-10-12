@@ -15,6 +15,12 @@ public class PoolUtil {
     public static void intiData(){
         ComboPooledDataSource pooledDataSource = new ComboPooledDataSource("c3p0-config.xml");
         dataSources = pooledDataSource;
+        try {
+            Connection connection = dataSources.getConnection();
+            connection.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
     public static Connection getConnection() {
         if(dataSources!=null){
