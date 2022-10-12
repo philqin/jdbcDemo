@@ -34,6 +34,7 @@ public class PoolUtil {
     }
 
     //释放查询操作相关的资源（结果集对象，SQL语句对象，归还数据库连接）
+    //关闭连接是讲连接放回连接池
     public static void close(Connection con, Statement stat, ResultSet rs)  {
         if (con != null) {
             try {
